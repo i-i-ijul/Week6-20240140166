@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Etalase — Katalog Produk</title>
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" aria-current="page">Etalase</a>
+    <a href="form.html">Caption</a>
+  </nav>
+
+  <header>
+    <div class="eyebrow">Rak No. 01 — Toko Digital</div>
+    <h1>Etalase</h1>
+    <p>data produk ditarik langsung dari dummyjson.com/products</p>
+  </header>
+
+  <div class="controls">
+    <input type="text" id="searchInput" placeholder="cari produk...">
+    <select id="categorySelect">
+      <option value="">Semua Kategori</option>
+    </select>
+  </div>
+
+  <main>
+    <div id="status">Memuat produk...</div>
+    <div class="grid" id="productGrid"></div>
+  </main>
+
+  <footer>
+    sumber data: dummyjson.com &middot; dibuat dengan HTML + JS native
+  </footer>
+
+<script src="js/index.js"></script>
+</body>
+</html>

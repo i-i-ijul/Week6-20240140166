@@ -1,0 +1,74 @@
+/* variabel, body, header, nav & footer diambil dari index.css */
+
+form{
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px;
+  background: var(--paper-dark);
+  border: 1.5px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--tag-red);
+  margin-top: 8px;
+}
+
+input, select, textarea{
+  padding: 12px 14px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--ink);
+  outline: none;
+}
+
+input::placeholder{ color: var(--ink-soft); }
+input:focus, select:focus, textarea:focus{ border-color: var(--tag-red); }
+
+select{ cursor: pointer; }
+
+textarea{
+  resize: vertical;
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+button{
+  margin-top: 12px;
+  padding: 12px;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover{
+  background: var(--tag-red);
+  border-color: var(--tag-red);
+}
+
+.error{
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--tag-red);
+  min-height: 14px;
+}
+
+input[aria-invalid="true"]{
+  border-color: var(--tag-red);
+  background: #f7e4e0;
+}
