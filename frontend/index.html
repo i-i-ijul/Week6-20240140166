@@ -1,40 +1,72 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Etalase — Katalog Produk</title>
-<link rel="stylesheet" href="css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Roti - Etalase & Caption Generator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" aria-current="page">Etalase</a>
-    <a href="form.html">Caption</a>
-  </nav>
-
-  <header>
-    <div class="eyebrow">Rak No. 01 — Toko Digital</div>
-    <h1>Etalase</h1>
-    <p>data produk ditarik langsung dari dummyjson.com/products</p>
+  <header class="header">
+    <div class="logo">🥐 Toko Roti Fresh</div>
+    <nav class="nav">
+      <button id="btn-etalase" class="nav-btn active">Etalase Roti</button>
+      <button id="btn-caption" class="nav-btn">Form Caption</button>
+    </nav>
   </header>
 
-  <div class="controls">
-    <input type="text" id="searchInput" placeholder="cari produk...">
-    <select id="categorySelect">
-      <option value="">Semua Kategori</option>
-    </select>
-  </div>
+  <main class="container">
+    <!-- HALAMAN ETALASE -->
+    <section id="page-etalase" class="page active">
+      <div class="section-title">
+        <h2>Katalog Roti Fresh Bake</h2>
+        <p>Klik salah satu produk di bawah untuk membuatkan caption-nya secara otomatis!</p>
+      </div>
+      <div id="product-grid" class="product-grid">
+        <!-- Produk akan dimuat lewat JavaScript -->
+      </div>
+    </section>
 
-  <main>
-    <div id="status">Memuat produk...</div>
-    <div class="grid" id="productGrid"></div>
+    <!-- HALAMAN CAPTION GENERATOR -->
+    <section id="page-caption" class="page">
+      <div class="card">
+        <h2>Form Caption Generator</h2>
+        <form id="form" novalidate>
+          <div class="form-group">
+            <label for="nama">Nama Produk Roti</label>
+            <input type="text" id="nama" placeholder="Contoh: Croissant Butter" autocomplete="off">
+            <div id="nama-error" class="error-msg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="harga">Harga (Rupiah)</label>
+            <input type="number" id="harga" placeholder="Contoh: 25000">
+            <div id="harga-error" class="error-msg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="template">Gaya Caption</label>
+            <select id="template">
+              <option value="promo">🔥 Promo Spesial</option>
+              <option value="santai">✨ Santai & Kasual</option>
+              <option value="formal">✦ Formal & Elegan</option>
+              <option value="fresh_bake">🥖 Fresh From Oven</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-primary">Generate Caption</button>
+        </form>
+
+        <div class="caption-result">
+          <label for="caption">Hasil Caption</label>
+          <textarea id="caption" readonly rows="8" placeholder="Hasil caption akan muncul di sini..."></textarea>
+          <button id="copy-btn" class="btn-secondary">📋 Salin Caption</button>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    sumber data: dummyjson.com &middot; dibuat dengan HTML + JS native
-  </footer>
-
-<script src="js/index.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
